@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  head
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    
+      
+div.container-fluid
+  h1 Timestamp Microservice
+  p Unix Time: #{time}
+  p Date: #{date}
+  -if (wrongInfo === "no string") {
+    div.alert.alert-info Add either a unix time number (ex. 0000323423) or a natural date (ex. March 15, 1985) to the end of the URL to run the conversion.
+  -}
+  -else if (wrongInfo === "bad string") {
+    div.alert.alert-warning Your string contains neither a unix time or natural date. Please try again.
+  -}
